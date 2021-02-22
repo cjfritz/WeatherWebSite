@@ -21,11 +21,12 @@ const getWeatherData = async ({ lat, long }) => {
 
     if (!body) { return null }
 
-    const { current: { temperature, feelslike: feelsLike, weather_descriptions: weatherDescs } = {} } = body || {};
+    const { current: { temperature, feelslike: feelsLike, weather_descriptions: weatherDescs, humidity } = {} } = body || {};
     return {
         temperature,
         feelsLike,
         weatherDescription: weatherDescs[0],
+        humidity,
     };
 };
 

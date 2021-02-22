@@ -22,10 +22,10 @@ const getWeather = address => {
         if (data.error) {
             line1.textContent = `Error: ${data.error}`;
         } else {
-            const { feelsLike, placeName, temperature, weatherDescription } = data;
+            const { feelsLike, placeName, temperature, weatherDescription, humidity } = data;
 
             line1.textContent = `For ${placeName}, it is currently ${temperature}°F${temperature !== feelsLike ? ` but feels like ${feelsLike}°F.` : '.'}`;
-            line2.textContent = `The weather is described as ${weatherDescription.toLowerCase()}.`;
+            line2.textContent = `The weather is described as ${weatherDescription.toLowerCase()} with a humidity of ${humidity}%`;
         }
     })
     .catch(err => console.error(err))
