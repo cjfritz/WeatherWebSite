@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link rel='icon' href='/imgs/weather.png'>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+
+    <body>
+        <div class="mainContent">
+            {{>header}}
+            <p>This is the {{title}} page</p>
+
+            <form>
+                <input placeholder="example: Boston">
+                <button>
+                    Search
+                </button>
+            </form>
+
+            <p id='line1'></p>
+
+            <p id='line2'></p>
+        </div>
+        {{>footer}}
+
+        {{!move the script below the form so that the code will run after the form shows in the DOM to avoid a null ptr exception}}
+        <script src="/js/app.js"></script>
+    </body>
+</html>
