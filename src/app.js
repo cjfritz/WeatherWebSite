@@ -8,6 +8,8 @@ console.log(path.join(__dirname, '../public/index.js'));
 console.log(__filename);
 
 const app = express();
+// process.env.PORT provided by heroku
+const port = process.env.PORT || 3000;
 
 /* app.set will allow you to set a variable to a particular value
 example: for hbs, it expects a view directory by default
@@ -91,6 +93,6 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('server running');
+app.listen(port, () => {
+    console.log(`server running on port ${port}`);
 });

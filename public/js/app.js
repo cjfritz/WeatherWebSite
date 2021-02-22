@@ -15,7 +15,7 @@ line2.textContent = ''; // update the text with textContext
 // going to use the web fetch api to make requests (automatically exposed in web, no need to install or require)
 const getWeather = address => {
     line1.textContent = 'Loading...';
-    fetch(`http://localhost:3000/weather?address=${address}`)
+    fetch(`/weather?address=${address}`)
     .then(response => response.json())
     .then(data => {
         console.log('data:', data);
